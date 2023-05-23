@@ -291,3 +291,8 @@ svg#clouds {
     visibility: hidden;
   }
 }
+
+/* Botão que mostra o campo (show) */
+.blank {
+  background-color: #ff0000;
+}

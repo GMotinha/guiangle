@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'GUIANGLE';
+  apareceCampo: boolean = false;
+
+  mostraCampo(): void {
+    this.apareceCampo =
+      !this
+        .apareceCampo; /*Ele sempre vai inver os valores (faz aparecer e sumir)*/
+  }
 }
