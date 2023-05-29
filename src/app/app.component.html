@@ -68,17 +68,22 @@
     </span>
     <input
       type="text"
+      [(ngModel)]="textoPesquisa"
       class="form-control"
       placeholder="Pesquise um testo ou um URL"
       aria-label="Username"
       aria-describedby="basic-addon1"
     />
   </div>
-  <button type="button" class="btn btn-primary">Primary</button><br />
-  <!-- Campo em branco -->
+  <div *ngIf="falhaAoPesquisar">
+    <small class="text-danger">Falha ao Pesquisar</small>
+  </div>
   <button (click)="mostraCampo()" type="button" class="btn btn-primary">
     Search</button
   ><br />
+
+  <!-- Campo em branco -->
+
   <div [hidden]="!apareceCampo" class="blank">
     <!-- hidden não quebra o elemento toda hora -->
     <table class="table">
@@ -111,5 +116,12 @@
       </tbody>
     </table>
   </div>
+  <div>
+    <ul>
+      <li *ngFor="let webSite of webSites; index as i">
+        {{ webSite.nome }}
+      </li>
+    </ul>
+  </div>
+  <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>
